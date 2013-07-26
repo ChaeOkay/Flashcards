@@ -5,14 +5,15 @@ class Deck
   def initialize(array_of_cards)
     @array_of_cards = array_of_cards
     @deck = []
+    deck_from_file
     shuffle
   end
 
   def deck_from_file
-    @array_of_cards.each { |def_and_term| @deck << Card.new(def_and_term) }
+    @array_of_cards.each { |defn_and_term| @deck << Card.new(defn_and_term) }
   end
 
-  def shuffle!
+  def shuffle
     @deck.shuffle!
   end
 
