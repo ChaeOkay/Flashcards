@@ -50,10 +50,11 @@ class View
     puts
   end
 
-  def self.incorrect_card
+  def self.incorrect_card(card_definition)
     puts "Almost.... try it again!"
     puts self.line_break
     puts
+    self.definition(card_definition)
   end
 end
 
