@@ -66,7 +66,7 @@ class Play
         guess_correct = true
         View.render(:correct_card)
       else
-        View.render(:incorrect_card)
+        View.render(:incorrect_card, card.definition)
       end
     end
   end
