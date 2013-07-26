@@ -29,7 +29,6 @@ class View
     puts "Thanks for playing, byeeeeeeeeeee!"
     puts self.line_break
     puts
-    break
   end
 
   def self.definition(card_definition)
@@ -41,7 +40,6 @@ class View
   def self.get_guess
     print "Please enter a guess >  "
     self.guess = gets.chomp
-    self.exit if self.guess == 'q'
     puts
   end
 
