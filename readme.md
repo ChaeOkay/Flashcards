@@ -15,8 +15,11 @@ View
 -  exit
 -  display card
 -  get_guess
--  correct_card
--  incorrect_card
+-  correct
+-  incorrect
+-  times_correct
+
+.render(message, :sms)
 
 Controller
 -  Parse file
@@ -30,6 +33,6 @@ Controller
                 -  if guess is correct
                     -  view - correct card guess
                     -  loop again from *view - display card* until deck is empty
-                -  if guess is incorrect
+                -  if guess is incorrect .render(:incorrect)
                     -  view - incorrect card guess
                     -  loop again from *view - get guess* from user until guess is correct
