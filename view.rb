@@ -1,4 +1,9 @@
 class View
+attr_accessor :guess
+
+  def initialize
+    @guess = ""
+  end
 
   def self.line_break
     "*" * 50
@@ -25,7 +30,7 @@ class View
   end
 
   def self.get_guess
-    puts "please eneter a guesess"
+    print "Please eneter a guess >  "
     @guess = gets.chomp
   end
 
