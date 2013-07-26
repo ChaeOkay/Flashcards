@@ -33,11 +33,12 @@ class Controller
 
   def self.open_file
     @text = File.open('flashcards.txt', 'r').readlines #opens file and reads it
+    @text = @text.join("").split("\n \n")
   end
 
   def self.create_flash_cards
     flash_cards = []
-    @text.join("").split("\n \n").each do |element| #split by two line breaks and take each element
+    @text.each do |element| #split by two line breaks and take each element
       pair = element.split("\n") #split by one line break
       flash_cards << {definition: pair[0], term: pair[1]}
       #flash_cards hash should look like [:definition] = definition, [:term] = term
