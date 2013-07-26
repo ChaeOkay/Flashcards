@@ -43,7 +43,7 @@ attr_accessor :guess
   end
 end
 
-# View.render('welcome')
-# View.render('exit')
-# View.render('definition', 'definition')
+# View.render(:welcome)
+# View.render(:exit)
+# View.render(:definition, 'definition')
 
