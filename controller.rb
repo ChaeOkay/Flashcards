@@ -1,25 +1,25 @@
 =begin
 
 Controller will...
-parse file, 
+parse file,
 instantiate new cards and deck,
 play game,
   - welcome message
   - iteration @ each element
     - display definition
-    - get guess from view 
+    - get guess from view
     - check guess
       - if true, call view.correct
       - if false, go back to get guess & call view.incorrect
   - end game
 
 
-Type of file we want to put our flash cards in? 
-Classes are deck and card? 
+Type of file we want to put our flash cards in?
+Classes are deck and card?
 
 =end
 
-class Controller 
+class Controller
   attr_reader :text
 
   def self.run
@@ -48,7 +48,7 @@ end
 class Play
 
   def self.go
-    
+
   end
 
 end

@@ -1,20 +1,35 @@
 require_relative 'model'
 
 class View
-  def self.welcome
-    # puts welcome message
+
+  def self.line_break
+    "*" * 50
   end
 
-  def self.exit
+  def self.render(message)
+    send message
+  end
+
+  def self.welcome
+    puts self.line_break
+    puts "Weclome to the flashcard spectacular!"
+    puts self.line_break
+  end
+
+  def exit
     # puts exit message
   end
 
-  def self.get_guess
+  def get_guess
   end
 
-  def self.correct_card
+  def correct_card
   end
 
-  def self.incorrect_card
+  def incorrect_card
   end
+
 end
+
+View.render('welcome')
+
