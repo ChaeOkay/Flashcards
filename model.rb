@@ -1,6 +1,6 @@
-# Main file for 
-
 class Deck
+
+  attr_reader :deck
 
   def initialize(flashcards)
     @deck = []
@@ -28,6 +28,5 @@ class Card
   end
 
 end
-
 
 
