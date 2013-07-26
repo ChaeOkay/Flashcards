@@ -20,15 +20,26 @@ Classes are deck and card?
 =end
 
 class Controller 
+  attr_reader :text
 
   def self.run
-
+    open_file
+    our_deck = Deck.new(create_flash_cards)
+    Play.go
   end
 
   def open_file
-    File.open('flashcards.txt', 'r').each_line do |line| #opens file and does to each line
-      p line
+    @text = File.open('flashcards.txt', 'r').readlines #opens file and reads it
+  end
+
+  def create_flash_cards
+    flash_cards = []
+    @text.join("").split("\n \n").each do |element| #split by two line breaks and take each element
+      pair = element.split("\n") #split by one line break
+      flash_cards << {definition: pair[0], term: pair[1]}
+      #flash_cards hash should look like [:definition] = definition, [:term] = term
     end
+    flash_cards
   end
 
 
@@ -37,7 +48,7 @@ end
 class Play
 
   def self.go
-
+    
   end
 
 end
@@ -45,3 +56,4 @@ end
 controller = Controller.new
 
 controller.open_file
+controller.create_flash_cards
