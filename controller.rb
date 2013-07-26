@@ -50,7 +50,13 @@ class Play
 
   def self.go
     View.render(welcome)
-    @our_deck.each do |
+    @our_deck.deck.each do |card|
+      guess_correct = false
+      while guess_correct == false
+        View.render(definition, card.definition)
+        guess = View.render(get_guess)
+        guess_correct = true if guess == card.term
+      end
     View.render(
 
     render(our_deck.deck[index])
