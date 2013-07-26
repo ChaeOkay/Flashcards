@@ -6,7 +6,7 @@ class View
 
   def self.guess=(input)
     @guess = input
-  end 
+  end
 
   def self.line_break
     "*" * 50
@@ -43,11 +43,13 @@ class View
 
   def self.correct_card
     puts "Good Job! That's correct!"
+    puts self.line_break
     puts
   end
 
   def self.incorrect_card
     puts "Almost.... try it again!"
+    puts self.line_break
     puts
   end
 end
