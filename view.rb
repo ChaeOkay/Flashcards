@@ -1,12 +1,14 @@
-require_relative 'model'
+require 'model'
 
 class View
+attr_
 
   def self.line_break
     "*" * 50
   end
 
   def self.render(message)
+##### working on parsing mutiple args with send
     send message
   end
 
@@ -22,7 +24,14 @@ class View
     puts self.line_break
   end
 
+###### working on passing mult args from render method
+  def self.definition(card_definition)
+    puts "#{card_definition}"
+  end
+
   def self.get_guess
+    puts "please eneter a guesess"
+    @guess = gets.chomp
   end
 
   def self.correct_card
