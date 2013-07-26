@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Main file for 
 
 class Deck
@@ -30,6 +29,3 @@ class Card
 end
 
 
-=======
-# Main file for 
->>>>>>> 45bf4bc26b30af7d2a5deb7414d428714dc2b392
