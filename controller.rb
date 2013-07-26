@@ -23,16 +23,16 @@ class Controller
   attr_reader :text, :our_deck
 
   def self.run
-    open_file
+    self.open_file
     @our_deck = Deck.new(create_flash_cards)
     Play.go(@our_deck)
   end
 
-  def open_file
+  def self.open_file
     @text = File.open('flashcards.txt', 'r').readlines #opens file and reads it
   end
 
-  def create_flash_cards
+  def self.create_flash_cards
     flash_cards = []
     @text.join("").split("\n \n").each do |element| #split by two line breaks and take each element
       pair = element.split("\n") #split by one line break
@@ -49,22 +49,25 @@ class Play
   attr_reader :our_deck
 
   def self.go
-    View.render(welcome)
-    @our_deck.deck.each do |card|
-      guess_correct = false
-      while guess_correct == false
-        View.render(definition, card.definition)
-        guess = View.render(get_guess)
-        guess_correct = true if guess == card.term
-      end
-    View.render(
+    View.render('welcome')
+    @our_deck.deck.each { |card| check_guess(card) }
+    View.render('exit')
+  end
 
-    render(our_deck.deck[index])
+  def self.check_guess(card)
+    guess_correct = false
+    View.render('definition', card.definition)
+    while guess_correct == false
+      guess = View.render('get_guess')
+      if guess == card.term
+        guess_correct = true
+        View.render('correct_card')
+      else
+        View.render('incorrect_card')
+      end
+    end
   end
 
 end
 
-controller = Controller.new
-
-controller.open_file
-controller.create_flash_cards
+Controller.run
