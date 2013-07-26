@@ -1,15 +1,11 @@
-require 'model'
-
 class View
-attr_
 
   def self.line_break
     "*" * 50
   end
 
-  def self.render(message, *args = nil)
-##### working on parsing mutiple args with send
-    send message(args)
+  def self.render(message, arg = nil)
+    arg == nil ? send(message) : send(message, arg)
   end
 
   def self.welcome
@@ -24,7 +20,6 @@ attr_
     puts self.line_break
   end
 
-###### working on passing mult args from render method
   def self.definition(card_definition)
     puts "#{card_definition}"
   end
@@ -44,4 +39,5 @@ end
 
 View.render('welcome')
 View.render('exit')
+View.render('definition', 'definition')
 
