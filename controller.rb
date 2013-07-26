@@ -19,6 +19,9 @@ Classes are deck and card?
 
 =end
 
+require_relative 'view'
+require_relative 'model'
+
 class Controller 
   attr_reader :text, :our_deck
 
@@ -58,7 +61,8 @@ class Play
     guess_correct = false
     View.render('definition', card.definition)
     while guess_correct == false
-      guess = View.render('get_guess')
+      View.render('get_guess')
+      guess = View.guess
       if guess == card.term
         guess_correct = true
         View.render('correct_card')
