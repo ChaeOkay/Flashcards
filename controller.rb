@@ -49,15 +49,21 @@ class Play
   attr_reader :our_deck
 
   def self.go
-    View.render(welcome)
+    View.render('welcome')
     @our_deck.deck.each do |card|
       guess_correct = false
+      View.render('definition', card.definition)
       while guess_correct == false
-        View.render(definition, card.definition)
-        guess = View.render(get_guess)
-        guess_correct = true if guess == card.term
+        guess = View.render('get_guess')
+        if guess == card.term
+          guess_correct = true
+          View.render('correct_card')
+        else
+          View.render('incorrect_card')
+        end
       end
-    View.render(
+    end
+    View.render('exit')
 
     render(our_deck.deck[index])
   end
