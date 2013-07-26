@@ -37,7 +37,7 @@ class View
 
   def self.get_guess
     print "Please enter a guess >  "
-    guess = gets.chomp
+    self.guess = gets.chomp
     puts
   end
 
