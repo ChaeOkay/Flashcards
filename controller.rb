@@ -51,7 +51,7 @@ class Play
   def self.go
     View.render(welcome)
     @our_deck.each do |
-    View.render()
+    View.render(
 
     render(our_deck.deck[index])
   end
