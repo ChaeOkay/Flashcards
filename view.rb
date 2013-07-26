@@ -29,6 +29,7 @@ class View
     puts "Thanks for playing, byeeeeeeeeeee!"
     puts self.line_break
     puts
+    exit
   end
 
   def self.definition(card_definition)
