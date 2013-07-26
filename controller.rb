@@ -65,6 +65,8 @@ class Play
       if guess == card.term
         guess_correct = true
         View.render(:correct_card)
+      elsif guess == "q"
+        exit
       else
         View.render(:incorrect_card, card.definition)
       end
