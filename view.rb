@@ -35,14 +35,15 @@ attr_accessor :guess
   end
 
   def self.correct_card
+    print "Good Job! That's correct!"
   end
 
   def self.incorrect_card
+    print "Almost.... try it again!"
   end
-
 end
 
-View.render('welcome')
-View.render('exit')
-View.render('definition', 'definition')
+# View.render('welcome')
+# View.render('exit')
+# View.render('definition', 'definition')
 
