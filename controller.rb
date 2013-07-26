@@ -19,13 +19,13 @@ Classes are deck and card?
 
 =end
 
-class Controller
-  attr_reader :text
+class Controller 
+  attr_reader :text, :our_deck
 
   def self.run
     open_file
-    our_deck = Deck.new(create_flash_cards)
-    Play.go
+    @our_deck = Deck.new(create_flash_cards)
+    Play.go(@our_deck)
   end
 
   def open_file
@@ -46,9 +46,14 @@ class Controller
 end
 
 class Play
+  attr_reader :our_deck
 
   def self.go
+    View.render(welcome)
+    @our_deck.each do |
+    View.render()
 
+    render(our_deck.deck[index])
   end
 
 end
