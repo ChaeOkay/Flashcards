@@ -17,6 +17,7 @@ attr_accessor :guess
     puts self.line_break
     puts "Weclome to the flashcard spectacular!"
     puts self.line_break
+    puts
   end
 
   def self.exit
@@ -26,20 +27,25 @@ attr_accessor :guess
   end
 
   def self.definition(card_definition)
+    puts "Definition"
     puts "#{card_definition}"
+    puts
   end
 
   def self.get_guess
-    print "Please eneter a guess >  "
+    print "Please enter a guess >  "
     @guess = gets.chomp
+    puts
   end
 
   def self.correct_card
-    print "Good Job! That's correct!"
+    puts "Good Job! That's correct!"
+    puts
   end
 
   def self.incorrect_card
-    print "Almost.... try it again!"
+    puts "Almost.... try it again!"
+    puts
   end
 end
 
