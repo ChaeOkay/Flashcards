@@ -15,7 +15,7 @@ play game,
 
 
 Type of file we want to put our flash cards in?
-Classes are deck and card?
+Classes are Deck and Card.
 
 =end
 
