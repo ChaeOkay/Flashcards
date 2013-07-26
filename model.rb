@@ -2,15 +2,14 @@
 
 class Deck
 
-  def initialize(array_of_cards)
-    @array_of_cards = array_of_cards
+  def initialize(flashcards)
     @deck = []
-    deck_from_file
+    create_deck(flashcards)
     shuffle
   end
 
-  def deck_from_file
-    @array_of_cards.each { |defn_and_term| @deck << Card.new(defn_and_term) }
+  def create_deck(flashcards)
+    flashcards.each { |defn_and_term| @deck << Card.new(defn_and_term) }
   end
 
   def shuffle
@@ -27,6 +26,7 @@ class Card
     @definition = args[:definition]
     @term = args[:term]
   end
+
 end
 
 
