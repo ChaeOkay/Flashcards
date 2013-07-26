@@ -49,11 +49,10 @@ class Controller
 end
 
 class Play
-  attr_reader :our_deck
 
-  def self.go
+  def self.go(our_deck)
     View.render(:welcome)
-    @our_deck.deck.each { |card| check_guess(card) }
+    our_deck.deck.each { |card| check_guess(card) }
     View.render(:exit)
   end
 
