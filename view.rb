@@ -1,9 +1,12 @@
 class View
-attr_accessor :guess
 
-  def initialize
-    @guess = ""
+  def self.guess
+    @guess
   end
+
+  def self.guess=(input)
+    @guess = input
+  end 
 
   def self.line_break
     "*" * 50
@@ -34,7 +37,7 @@ attr_accessor :guess
 
   def self.get_guess
     print "Please enter a guess >  "
-    @guess = gets.chomp
+    guess = gets.chomp
     puts
   end
 
