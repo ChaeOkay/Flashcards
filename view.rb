@@ -16,20 +16,23 @@ class View
     puts self.line_break
   end
 
-  def exit
-    # puts exit message
+  def self.exit
+    puts self.line_break
+    puts "Thanks for playing, byeeeeeeeeeee!"
+    puts self.line_break
   end
 
-  def get_guess
+  def self.get_guess
   end
 
-  def correct_card
+  def self.correct_card
   end
 
-  def incorrect_card
+  def self.incorrect_card
   end
 
 end
 
 View.render('welcome')
+View.render('exit')
 
