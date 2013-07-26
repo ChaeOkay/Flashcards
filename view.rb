@@ -7,9 +7,9 @@ attr_
     "*" * 50
   end
 
-  def self.render(message)
+  def self.render(message, *args = nil)
 ##### working on parsing mutiple args with send
-    send message
+    send message(args)
   end
 
   def self.welcome
