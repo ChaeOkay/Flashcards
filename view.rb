@@ -19,6 +19,7 @@ class View
   def self.welcome
     puts self.line_break
     puts "Weclome to the flashcard spectacular!"
+    puts "Enter 'q' at any time to quit this program"
     puts self.line_break
     puts
   end
@@ -39,6 +40,7 @@ class View
   def self.get_guess
     print "Please enter a guess >  "
     self.guess = gets.chomp
+    self.exit if self.guess == 'q'
     puts
   end
 
