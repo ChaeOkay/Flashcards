@@ -1,9 +1,9 @@
 #Flashcards Group Project
-Team: Jeff, Ishware, Alex, Chae
+Team: Jeff, Ishwar, Alex, Chae
 
 Model
 -  Cards
-  -  definition
+  - definition
   - term
 -  Deck
   - stores cards
@@ -18,8 +18,6 @@ View
 -  correct
 -  incorrect
 -  times_correct
-
-.render(message, :sms)
 
 Controller
 -  Parse file
