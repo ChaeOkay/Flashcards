@@ -1,59 +1,63 @@
 class View
 
-  def self.guess
-    @guess
-  end
+  class << self
+    def guess
+      @guess
+    end
 
-  def self.guess=(input)
-    @guess = input
-  end
+    def guess=(input)
+      @guess = input
+    end
 
-  def self.line_break
-    "*" * 50
-  end
+    def line_break
+      "*" * 50
+    end
 
-  def self.render(message, arg = nil)
-    arg == nil ? send(message) : send(message, arg)
-  end
+    def line_break_end
+      puts line_break
+      puts
+    end
 
-  def self.welcome
-    puts self.line_break
-    puts "Weclome to the flashcard spectacular!"
-    puts "Enter 'q' at any time to quit this program"
-    puts self.line_break
-    puts
-  end
+    def render(message, arg = nil)
+      arg == nil ? send(message) : send(message, arg)
+    end
 
-  def self.exit
-    puts self.line_break
-    puts "Thanks for playing, byeeeeeeeeeee!"
-    puts self.line_break
-    puts
-  end
+    def welcome
+      puts line_break
+      puts "Weclome to the flashcard spectacular!"
+      puts "Enter 'q' at any time to quit this program"
+      puts line_break_end
+    end
 
-  def self.definition(card_definition)
-    puts "Definition"
-    puts "#{card_definition}"
-    puts
-  end
+    def exit
+      puts line_break
+      puts "Thanks for playing, byeeeeeeeeeee!"
+      puts line_break_end
+    end
 
-  def self.get_guess
-    print "Please enter a guess >  "
-    self.guess = gets.chomp
-    puts
-  end
+    def definition(card_definition)
+      puts "Definition"
+      puts "#{card_definition}"
+      puts
+    end
 
-  def self.correct_card
-    puts "Good Job! That's correct!"
-    puts self.line_break
-    puts
-  end
+    def get_guess
+      print "Please enter a guess >  "
+      self.guess = gets.chomp
+      puts
+    end
 
-  def self.incorrect_card(card_definition)
-    puts "Almost.... try it again!"
-    puts self.line_break
-    puts
-    self.definition(card_definition)
+    def correct_card
+      puts "Good Job! That's correct!"
+      puts line_break_end
+    end
+
+    def incorrect_card(card_definition)
+      puts "Almost.... try it again!"
+      puts line_break_end
+      definition(card_definition)
+    end
+    
   end
 end
 
