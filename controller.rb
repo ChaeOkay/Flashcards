@@ -1,24 +1,3 @@
-=begin
-
-Controller will...
-parse file,
-instantiate new cards and deck,
-play game,
-  - welcome message
-  - iteration @ each element
-    - display definition
-    - get guess from view
-    - check guess
-      - if true, call view.correct
-      - if false, go back to get guess & call view.incorrect
-  - end game
-
-
-Type of file we want to put our flash cards in?
-Classes are Deck and Card.
-
-=end
-
 require_relative 'view'
 require_relative 'model'
 
